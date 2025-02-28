@@ -29,7 +29,7 @@ class Emp{
         Emp(int id,string name,string role,string dept,float years,double sal){
             // this : keyword is used to refer to 
             // current class object invoking the constructor or function.
-            cntemp();
+            cntemp(); //call to static method
             this->eid=id;
             this->ename=name;
             this->role=role;
