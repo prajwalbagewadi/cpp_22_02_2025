@@ -16,6 +16,8 @@ class Emp{
     
     public:
         //static variable.
+        // variables defined as static are created only once for entire class.
+        // static variables are shared amoung all objects of a class.
         static int cnt;
 
         //static method.
@@ -32,7 +34,7 @@ class Emp{
             this->ename=name;
             this->role=role;
             this->dept=dept;
-            this->years=years;
+            this->years=years;++
             this->sal=sal;
         }
 
@@ -61,7 +63,10 @@ int main(){
     Emp e2(2,"def","hr","humanresource",0.6,35000.00);
     e2.disp();
 
+    Emp e3(2,"def","hr","humanresource",0.6,35000.00);
+    e3.disp();
+
     //static method call.
-    Emp::showempcnt();
+    Emp::showempcnt(); //:: scope resolution operator tells the compiler that showempcnt() is defined in Emp class.
     return 0;
 }
