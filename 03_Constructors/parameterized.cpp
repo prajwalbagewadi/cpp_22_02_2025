@@ -43,6 +43,7 @@ class MotorCycle{
 
 
 int main(){
+    //constructor call
     MotorCycle m1(" Hunter 350",149900.00,36.00,177,13);
     m1.disp();
 

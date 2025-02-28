@@ -15,25 +15,17 @@ class MotorCycle{
     public:
     //constructor : is special type of function with the same name as class name 
     //used to initialize the data members of a class
-    MotorCycle(string mod,double amt,double mile,int kg,int ltr){
+    MotorCycle(){
         year=2025;
         brand="Royal Enfield";
+    }
+
+    void accept(string mod,double amt,double mile,int kg,int ltr){
         model=mod;
         price=amt;
         mileage=mile;
         weight=kg;
         tankCapacity=ltr;
-    }
-
-    //copy constructor
-    MotorCycle(MotorCycle &obj){
-         year=2025;
-        brand="Royal Enfield";
-        model=obj.model;
-        price=obj.price;
-        mileage=obj.mileage;
-        weight=obj.weight;
-        tankCapacity=obj.tankCapacity;
     }
 
     void disp(){
@@ -45,19 +37,23 @@ class MotorCycle{
         cout<<"weight:"<<weight<<"kg"<<"\n";
         cout<<"tankCapacity:"<<tankCapacity<<"ltr"<<"\n";
     }
+
+
+    //destructor
+    //destructor: a special type of function used to deallocate the memory assigned to a object 
+    //and run closing procedures.
+    ~MotorCycle(){
+        cout<<"destructor called"<<"\n";
+        cout<<"memory cleared";
+    }
 };
 
 
 
 int main(){
-    //consturctor call
-    cout<<"obj1"<<"\n";
-    MotorCycle m1(" Hunter 350",149900.00,36.00,177,13);
+    MotorCycle m1;
+    m1.accept(" Hunter 350",149900.00,36.00,177,13);
     m1.disp();
 
-      //copy consturctor call
-    cout<<"obj2"<<"\n";
-    MotorCycle m2(m1);
-    m2.disp();
     return 0;
 }
